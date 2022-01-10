@@ -214,7 +214,7 @@ async def call_apropriate_function(
     c_file_name,
     sent_message_to_update_tg_p,
     is_zip,
-    force_doc=False,
+    force_doc=True,
     cfn=None
 ):
     if incoming_link.lower().startswith("magnet:"):
@@ -279,7 +279,7 @@ async def call_apropriate_function(
         message_to_send += "👉 <a href='"
         message_to_send += private_link
         message_to_send += "'>"
-        message_to_send += local_file_name
+        message_to_send += base_file_name
         message_to_send += "</a>"
         message_to_send += "\n"
     if message_to_send != "":
