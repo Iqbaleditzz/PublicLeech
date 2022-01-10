@@ -283,9 +283,9 @@ async def call_apropriate_function(
         message_to_send += "</a>"
         message_to_send += "\n"
     if message_to_send != "":
-        mention_req_user = f"<a href='tg://user?id={user_id}'>Your Requested Files</a>\n\n"
+        mention_req_user = f"<a href='tg://user?id={user_id}'>📍Your Requested Files 😍</a>\n\n"
         message_to_send = mention_req_user + message_to_send
-        message_to_send = message_to_send + "\n\n" + "#uploads"
+        message_to_send = message_to_send + "\n\n" + "#uploads. @IET_Updates"
     else:
         message_to_send = "<i>FAILED</i> to upload files. 😞😞"
     # also clear the aria2 downloads
@@ -320,16 +320,16 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 except:
                     pass
                 #
-                msg = f"\nDownloading File: <code>{downloading_dir_name}</code>"
-                msg += f"\nSpeed: {file.download_speed_string()} 🔽 / {file.upload_speed_string()} 🔼"
-                msg += f"\nProgress: {file.progress_string()}"
-                msg += f"\nTotal Size: {file.total_length_string()}"
-                msg += f"\n<b>Info:</b>| P: {file.connections} |"
+                msg = f"\n📥 Downloading File: <code>{downloading_dir_name}</code>"
+                msg += f"\n⏲️Speed : {file.download_speed_string()} 📥 / {file.upload_speed_string()} 📤"
+                msg += f"\n⏳ Progress: {file.progress_string()}"
+                msg += f"\n🗂️ Total Size: {file.total_length_string()}"
+                msg += f"\n<b>📄 Info:</b>| P: {file.connections} |"
                 if file.seeder is False:
                     """https://t.me/c/1220993104/670177"""
                     msg += f"| S: {file.num_seeders} |"
-                # msg += f"\nStatus: {file.status}"
-                msg += f"\nETA: {file.eta_string()}"
+                # msg += f"\n⏳ Status: {file.status}"
+                msg += f"\n⏰ ETA: {file.eta_string()}"
                 msg += f"\n<code>/cancel {gid}</code>"
                 # LOGGER.info(msg)
                 if msg != previous_message:
