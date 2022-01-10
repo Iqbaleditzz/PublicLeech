@@ -55,7 +55,7 @@ async def upload_to_tg(
     dict_contatining_uploaded_files,
     edit_media=False,
     custom_caption=None,
-    force_doc=False,
+    force_doc=True,
     cfn=None
 ):
     LOGGER.info(local_file_name)
@@ -63,9 +63,9 @@ async def upload_to_tg(
     caption_str = custom_caption
     if not (caption_str or edit_media):
         LOGGER.info("fall-back to default file_name")
-        caption_str = "<code>"
+        caption_str = "<b>"
         caption_str += base_file_name
-        caption_str += "</code>"
+        caption_str += "</b>"
     # caption_str += "\n\n"
     # caption_str += "<a href='tg://user?id="
     # caption_str += str(from_user)
@@ -148,7 +148,7 @@ async def upload_single_file(
     caption_str,
     from_user,
     edit_media,
-    force_doc=False,
+    force_doc=True,
     cfn=None
 ):
     await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
