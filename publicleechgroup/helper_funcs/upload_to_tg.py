@@ -129,6 +129,7 @@ async def upload_to_tg(
         else:
             sent_message = await upload_single_file(
                 message,
+                base_file_name,
                 caption_str,
                 from_user,
                 edit_media,
