@@ -77,7 +77,7 @@ async def leech_commandi_f(client, message):
         "checking",
         quote=True
     )
-    force_doc = False
+    force_doc = True
     m_sgra = " ".join(message.command[1:])
     if "file" in m_sgra.lower():
         force_doc = True
