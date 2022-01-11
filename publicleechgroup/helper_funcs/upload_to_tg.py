@@ -279,7 +279,7 @@ async def upload_single_file(
         if edit_media and message.photo:
             sent_message = await message.edit_media(
                 media=InputMediaAudio(
-                    media=local_file_name,
+                    media=base_file_name,
                     thumb=thumb,
                     caption=caption_str,
                     parse_mode="html",
@@ -291,7 +291,7 @@ async def upload_single_file(
             )
         else:
             sent_message = await message.reply_audio(
-                audio=local_file_name,
+                audio=base_file_name,
                 # quote=True,
                 caption=caption_str,
                 parse_mode="html",
